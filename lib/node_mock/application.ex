@@ -14,6 +14,7 @@ defmodule NodeMock.Application do
       NodeMockWeb.Endpoint,
       # Starts a worker by calling: NodeMock.Worker.start_link(arg)
       # {NodeMock.Worker, arg},
+      NodeMock.BlockProducer
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

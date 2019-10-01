@@ -7,5 +7,7 @@ defmodule NodeMockWeb.Router do
 
   scope "/", NodeMockWeb do
     pipe_through :api
+
+    post "/", BlockController, :rpc
   end
 end
