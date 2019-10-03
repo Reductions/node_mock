@@ -1,19 +1,11 @@
 # NodeMock
 
-To start your Phoenix server:
+To run the *Node Mock* server you need to have Postgres installed on the machine and run the folowing commands:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
   * Start Phoenix endpoint with `mix phx.server`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+The server is now exposed on: http://localhost:4000
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+To connect the exported to the server you need to set the `NODE_URL` evn varaiable to http://localhost:4000 when running the exporter.
