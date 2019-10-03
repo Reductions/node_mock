@@ -12,7 +12,7 @@ defmodule NodeMock.BlockProducer do
   defguard is_prob(prob) when prob < 1 and prob > 0
 
   def child_spec([]) do
-    child_spec([0.2, 0.05])
+    child_spec([block_prob(), orphan_prob()])
   end
 
   def child_spec(params) do
@@ -20,6 +20,14 @@ defmodule NodeMock.BlockProducer do
       id: __MODULE__,
       start: {__MODULE__, :start_link, [params]}
     }
+  end
+
+  defp block_prob() do
+    Application.get_env(:node_mock, __MODULE__)[:block_probability]
+  end
+
+  defp orphan_prob() do
+    Application.get_env(:node_mock, __MODULE__)[:orphan_probability]
   end
 
   def start_link(params) do

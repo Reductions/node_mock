@@ -10,6 +10,11 @@ use Mix.Config
 config :node_mock,
   ecto_repos: [NodeMock.Repo]
 
+config :node_mock, NodeMock.BlockProducer,
+  block_probability: 0.2,
+  orphan_probability: 0.1
+
+
 # Configures the endpoint
 config :node_mock, NodeMockWeb.Endpoint,
   url: [host: "localhost"],
@@ -24,6 +29,7 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
